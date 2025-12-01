@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+    /*Colors*/
+    --principal-color: #6A4BCF;
+    --secondary-color: #8A6FF5;
+    --destaque-color: #E27BEA;
+    --text-color: #22202A;
+    --bg-color: #F6F5FB;
+
+    /*Fonts*/
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+    --font-tertiary: 'Merriweather Sans', sans-serif;
+    --font-links: 'Spectral', serif;
+    --font-accent: 'Alex Brush', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/*General configuration */
+
+body {
+    background-color: var(--bg-color);
+}
+
+/* NAV */
+
+.nav-container {
+    position: sticky;
+    display: flex;
+    background: linear-gradient(to right, var(--principal-color), var(--secondary-color));
+    top: 0;
+    left: 70px;
+    z-index: 10;
+    padding: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+    gap: 35px;
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: var(--bg-color);
+    font-family: var(--font-links);
+    font-weight: 600;
+}
+
+.nav-container a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: var(--destaque-color);
+    transition: width .5s;
+    width: 0;
+}
+
+.nav-container a:hover::after {
+    width: 100%;
+}
