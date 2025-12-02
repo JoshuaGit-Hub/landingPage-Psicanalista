@@ -38,13 +38,12 @@ body {
     top: 0;
     left: 70px;
     z-index: 10;
-    padding: 20px;
+    padding: 20px 50px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    margin-left: auto;
     gap: 35px;
 }
 
@@ -55,7 +54,7 @@ body {
     font-weight: 600;
 }
 
-.nav-container a::after {
+.nav-links a::after {
     content: '';
     display: block;
     height: 3px;
@@ -64,6 +63,63 @@ body {
     width: 0;
 }
 
-.nav-container a:hover::after {
+.nav-links a:hover::after {
     width: 100%;
+}
+
+/* Hamburger Menu */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+    width: 30px;
+    height: 45px;
+    justify-content: center;
+}
+
+.bar {
+    display: block;
+    width: 28px;
+    height: 2.8px;
+    background-color: white;
+}
+
+.nav-responsive_container {
+    display: none;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    background: linear-gradient(to right, var(--principal-color), var(--secondary-color));
+    bottom: -50px;
+    left: 0;
+    z-index: 9;
+}
+
+.nav-responsive_container.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links_responsive.active {
+    display: flex;
+    flex-direction: row;
+    font-size: .9rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-hamburguer {
+        display: flex;
+        gap: 4px;
+    }
+
+    .nav-container {
+        padding: 10px 20px;
+    }
+
 }
