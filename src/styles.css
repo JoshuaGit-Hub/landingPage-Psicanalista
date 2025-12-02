@@ -34,11 +34,31 @@ body {
 .nav-container {
     position: sticky;
     display: flex;
+    align-items: center;
     background: linear-gradient(to right, var(--principal-color), var(--secondary-color));
     top: 0;
     left: 70px;
     z-index: 10;
     padding: 20px 50px;
+}
+
+.nav-logo {
+    display: flex;
+    width: 350px;
+    align-items: center;
+}
+
+.nav-logo p {
+    font-family: var(--font-accent);
+    font-size: 2rem;
+    color: var(--bg-color);
+    margin-left: 15px;
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+    border-radius: 40%;
 }
 
 .nav-links {
@@ -111,6 +131,7 @@ body {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        gap: 15px;
     }
 
     .menu-hamburguer {
@@ -122,4 +143,7 @@ body {
         padding: 10px 20px;
     }
 
+    .nav-logo p {
+        font-size: 1.5rem;
+    }
 }
