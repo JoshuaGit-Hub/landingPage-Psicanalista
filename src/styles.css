@@ -1,21 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 :root {
-    /*Colors*/
-    --principal-color: #6A4BCF;
-    --secondary-color: #8A6FF5;
-    --destaque-color: #E27BEA;
-    --light_pink-color: #F2C4FF;
-    --text-color: #22202A;
-    --text-color-destaque: #2D1B56;
-    --bg-color: #F6F5FB;
-
+    --principal-color: #2D1B4E;
+    /* Roxo escuro profundo */
+    --secondary-color: #4A3668;
+    /* Roxo médio */
+    --destaque-color: #6B4FA3;
+    /* Roxo vibrante mas sóbrio */
+    --accent-color: #8B7BAA;
+    /* Lavanda acinzentado */
+    --light-bg: #E8E4F3;
+    /* Fundo claro suave */
+    
     /*Fonts*/
     --font-primary: 'Inter', sans-serif;
     --font-secondary: 'Open Sans', sans-serif;
     --font-tertiary: 'Merriweather Sans', sans-serif;
     --font-links: 'Spectral', serif;
     --font-accent: 'Alex Brush', cursive;
+
+    /* Cores de texto */
+    --text-light: #FFFFFF;
+    --text-dark: #1A1625;
+    --text-muted: #948FA8;
+
+    /* Gradientes suaves */
+    --gradient-primary: linear-gradient(135deg, #2D1B4E 0%, #4A3668 100%);
+    --gradient-hover: linear-gradient(135deg, #4A3668 0%, #6B4FA3 100%);
 }
 
 * {
@@ -35,7 +46,6 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.34);
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -47,6 +57,7 @@ body {
 #overlay.active {
     opacity: 1;
     pointer-events: all;
+    background-color: rgba(45, 27, 78, 0.4);
 }
 
 /* NAV */
@@ -55,7 +66,9 @@ body {
     position: sticky;
     display: flex;
     align-items: center;
-    background: linear-gradient(90deg, #5E3CCF, #775BEF);
+    background: var(--gradient-primary);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(45, 27, 78, 0.15);
     top: 0;
     left: 70px;
     max-height: 75px;
@@ -64,7 +77,7 @@ body {
 }
 
 .nav-container.hero-passed {
-    box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.21);
+    box-shadow: 0 4px 20px rgba(45, 27, 78, 0.25);
 }
 
 .nav-logo {
@@ -76,9 +89,9 @@ body {
 .nav-logo p {
     font-family: var(--font-accent);
     font-size: 2rem;
-    color: var(--bg-color);
+    color: var(--text-light);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     margin-left: 15px;
-    text-shadow: 0 2px 8px rgba(0,0,0,.35);
 }
 
 #logo {
@@ -95,16 +108,21 @@ body {
 
 .nav-container a {
     text-decoration: none;
-    color: var(--bg-color);
+    color: var(--light-bg);
     font-family: var(--font-links);
     font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-container a:hover {
+    color: var(--accent-color);
 }
 
 .nav-links a::after {
     content: '';
     display: block;
     height: 3px;
-    background-color: #F2C4FF;
+    background-color: var(--accent-color);
     transition: width .5s;
     width: 0;
 }
@@ -128,7 +146,7 @@ body {
     display: block;
     width: 28px;
     height: 2.8px;
-    background-color: white;
+    background-color: var(--light-bg);
 }
 
 .nav-responsive_container {
@@ -159,7 +177,10 @@ body {
 #hero {
     height: 90vh;
     display: flex;
-    background: linear-gradient(135deg, #5E3CCF 0%, #775BEF 50%, #C598E7 100%);
+    background: var(--principal-color);
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(107, 79, 163, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(74, 54, 104, 0.15) 0%, transparent 50%);
     color: var(--bg-color);
     padding: 50px;
     position: relative;
@@ -170,8 +191,10 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to right, #E27BEA, #F4A8F0);
-    color: var(--text-color-destaque);
+    background-color: var(--destaque-color);
+    color: var(--text-light);
+    font-weight: 500;
+    letter-spacing: 0.5px;
     text-align: center;
     padding: 10px 0;
     font-family: var(--font-secondary);
@@ -189,6 +212,7 @@ body {
 .hero-content {
     margin-top: 5%;
     font-family: var(--font-tertiary);
+    color: var(--text-light);
 }
 
 .hero-content h1 {
@@ -209,7 +233,8 @@ body {
     font-size: 3.4rem;
     font-weight: 500;
     margin-top: 20px;
-    text-shadow: 0 2px 8px rgba(0,0,0,.35);
+    color: var(--light-bg);
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
 }
 
 .num-psi {
@@ -227,16 +252,20 @@ body {
     border: none;
     border-radius: 4px;
     padding: 0 5px;
-    color: var(--bg-color);
-    background-color: var(--destaque-color);
     cursor: pointer;
-    transition: all .4s ease;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    font-size: 1rem;
+    background: var(--destaque-color);
+    color: var(--text-light);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 8px 25px rgba(107, 79, 163, 0.3);
+    transition: all 0.3s ease;
 }
 
 #hero-btn_contact:hover {
-    background-color: var(--light_pink-color);
-    color: var(--text-color-destaque);
+    background: var(--gradient-hover);
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 12px 35px rgba(107, 79, 163, 0.4);
 }
 
 .hero-left-content {
@@ -248,19 +277,32 @@ body {
     margin-top: auto;
     gap: 20px;
     align-items: center;
+    justify-content: center;
 }
 
 .experiencia h2 {
+    background: rgba(107, 79, 163, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--light-bg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     padding: 15px;
-    background-color: var(--destaque-color);
     width: fit-content;
     border-radius: 15px;
+}
+
+.experiencia h3 {
+    color: var(--light-bg);
 }
 
 .experiencia p {
     text-align: center;
     font-size: .9rem;
-    color: #f6f5fbb7;
+    color: var(--accent-color);
+}
+
+.nav-responsive_container {
+    background: var(--gradient-primary);
 }
 
 @media (max-width: 768px) {
