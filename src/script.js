@@ -44,3 +44,27 @@ window.addEventListener('scroll', () => {
         navContainer.classList.remove('hero-passed');
     }
 });
+
+
+// Animation Sections
+
+const sections = document.querySelectorAll('.fade-in-section'); 
+const elementsRight = document.querySelectorAll('.fade-in-right');
+
+const observer = new IntersectionObserver ((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+elementsRight.forEach(element => {
+    observer.observe(element);
+})
