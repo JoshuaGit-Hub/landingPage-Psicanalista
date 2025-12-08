@@ -344,22 +344,34 @@ body {
 }
 
 .hero-left-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 100%;
+    margin-left: 100px;
 }
 
 .media-hero_responsive {
     display: none;
 }
 
+#cards-quality {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    margin-top: auto;
+}
+
 .experiencia {
     display: flex;
-    margin-top: auto;
     gap: 20px;
     align-items: center;
     background-color: var(--secondary-color);
     width: max-content;
     border-radius: 4px;
     padding: 5px 10px;
+    text-align: center;
+    height: 80px;
 }
 
 .experiencia h2 {
@@ -436,6 +448,16 @@ body {
 
 }
 
+@media (max-width: 1119px) {
+    #cards-quality {
+        flex-direction: column;
+    }
+
+    #hero {
+        padding: 50px 35px;
+    }
+}
+
 @media (max-width: 768px) {
 
     /*Nav*/
@@ -473,6 +495,12 @@ body {
 
     #hero {
         padding: 50px 35px;
+    }
+
+    /*nav*/
+
+    #logo {
+        width: 35px;
     }
 }
 
