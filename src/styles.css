@@ -812,6 +812,44 @@ button:focus-visible,
     box-shadow: 0 4px 15px rgba(107, 79, 163, 0.2);
 }
 
+/*Abordagem*/
+
+#minhaAbordagem {
+    background: var(--light-bg);
+    backdrop-filter: blur(10px);
+    padding: 80px 50px;
+    font-family: var(--font-secondary);
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.abordagem-container {
+    display: flex;
+    align-items: center;
+    gap: 130px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#gray-background_abordagem {
+    position: relative;
+    z-index: -1;
+}
+
+#psi-photo_abordagem {
+    position: absolute;
+    left: 215px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 340px;
+}
+
+/*Seção de contato*/
+
+#contato-section {
+    display: flex;
+    height: 500px;
+}
+
 @media (max-width: 1119px) {
     #cards-quality_hero {
         flex-direction: column;
