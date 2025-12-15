@@ -21,10 +21,7 @@
 
     <nav class="nav-container">
         <div class="nav-logo">
-            <a href="#hero">
-                <img src="src/assets/brain-ilustration.jpg" alt="Logo Andrea Santos Psicanalista" id="logo">
-            </a>
-            <p>Dr. Andrea Fonseca</p>
+            <a href="#sobre" id="logo-link">Dr. Andrea Fonseca</a>
         </div>
         <ul class="nav-links" style="margin-left: auto;">
             <li><a href="#hero">Início</a></li>
@@ -64,15 +61,17 @@
                     <p>Para todo o mundo</p>
 
                     <figure class="media-hero_responsive" aria-hidden="true">
-                        <img src="hero-image.png" alt="Dra. Andrea Fonseca, psicanalista, atendimentos online">
+                        <img src="src/assets/psi-photo-logo.jpg"
+                            alt="Dra. Andrea Fonseca, psicanalista, atendimentos online">
                     </figure>
                 </div>
 
-                <button class="contact_btn" id="hero-btn_contact">Agendar consulta agora</button>
+                <button class="contact_btn btn-ripple" id="hero-btn_contact">Agendar consulta agora</button>
 
                 <div class="hero-left-content">
                     <figure class="hero-media" aria-hidden="true">
-                        <img src="hero-image.png" alt="Dra. Andrea Fonseca, psicanalista, atendimentos online">
+                        <img src="src/assets/psi-photo-logo.jpg"
+                            alt="Dra. Andrea Fonseca, psicanalista, atendimentos online">
                     </figure>
 
                     <div id="cards-quality_hero">
@@ -109,7 +108,8 @@
 
             <div id="container-about">
                 <figure class="img-container">
-                    <img src="#" alt="Foto da Dra. Andrea Fonseca na seção 'sobre mim'" aria-hidden="true">
+                    <img src="src/assets/psi-photo-about.jpg" alt="Foto da Dra. Andrea Fonseca na seção 'sobre mim'"
+                        aria-hidden="true">
                 </figure>
                 <div class="about-text">
                     <p>
@@ -143,25 +143,110 @@
             </div>
         </section>
 
-        <section id="cards-quality_section">
-            <h2>Minha forma de trabalho</h2>
+        <section id="para-quem">
+            <div class="para-quem-header">
+                <span class="destaque-topo">Identificação</span>
+                <h2>Para quem é a <span class="text-gold">Análise?</span></h2>
+                <p>A terapia não é apenas para curar feridas, mas para descobrir quem você realmente é. Você se
+                    identifica com alguma destas situações?</p>
+            </div>
+
+            <div class="identificacao-grid">
+                <div class="identificacao-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <h3>Mora fora e sente solidão?</h3>
+                    <p>Mesmo cercado de pessoas, a barreira cultural e a saudade de casa trazem uma sensação de não
+                        pertencimento. Falar seus sentimentos na língua materna é libertador.</p>
+                </div>
+
+                <div class="identificacao-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-cloud-rain"></i>
+                    </div>
+                    <h3>A ansiedade trava sua vida?</h3>
+                    <p>Pensamentos acelerados, medo do futuro ou uma sensação constante de que algo vai dar errado.
+                        Entender a raiz disso é o primeiro passo para o alívio.</p>
+                </div>
+
+                <div class="identificacao-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-heart-crack"></i>
+                    </div>
+                    <h3>Padrões que se repetem?</h3>
+                    <p>Você percebe que sempre cai nos mesmos tipos de relacionamentos ou comete os mesmos erros, mas
+                        não sabe como quebrar esse ciclo vicioso?</p>
+                </div>
+
+                <div class="identificacao-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-fingerprint"></i>
+                    </div>
+                    <h3>Sensação de vazio?</h3>
+                    <p>Uma tristeza sem motivo aparente ou a sensação de estar vivendo no "piloto automático",
+                        desconectado dos seus próprios desejos.</p>
+                </div>
+
+                <div class="identificacao-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-battery-quarter"></i>
+                    </div>
+                    <h3>Esgotamento emocional?</h3>
+                    <p>A pressão para "dar certo" longe de casa pode ser esmagadora. Se o cansaço não passa nem depois
+                        de dormir, precisamos investigar o que está a pesar na mente.</p>
+                </div>
+
+                <div class="identificacao-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3>O passado insiste em voltar?</h3>
+                    <p>Memórias difíceis ou traumas antigos continuam a influenciar as suas escolhas hoje? A análise é o
+                        caminho para ressignificar a sua própria história e seguir em frente.</p>
+                </div>
+            </div>
+
+            <div class="cta-center">
+                <p>Se você disse "sim" para algum desses pontos...</p>
+                <a href="https://wa.me/SEUNUMERO" target="_blank" class="link-dourado">Vamos conversar sobre isso <i
+                        class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section id="metodologia">
+            <div class="header-metodologia">
+                <span class="destaque-topo">Como funciona</span>
+                <h2>O pilar do meu <span class="text-gold-dark">Trabalho</span></h2>
+                <p>Uma prática clínica fundamentada no rigor técnico e na sensibilidade humana.</p>
+            </div>
+
             <div class="cards-container">
-                <div class="card-quality">
-                    <i class="fa-solid fa-wifi"></i>
-                    <h4>100% online</h4>
-                    <p>Atendimentos por videochamada, com total conforto e privacidade.</p>
+                <div class="card-quality card-claro">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-laptop-medical"></i>
+                    </div>
+                    <h4>Liberdade Geográfica</h4>
+                    <p>Atendimento online para brasileiros em qualquer lugar do mundo. Sinta-se em casa falando o seu
+                        idioma, no conforto do seu ambiente.</p>
                 </div>
 
-                <div class="card-quality">
-                    <i class="fa-solid fa-brain"></i>
-                    <h4>Método Psicanalítico</h4>
-                    <p>Análise profunda para compreender emoções e padrões.</p>
+                <div class="card-quality card-claro">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <h4>Escuta Psicanalítica</h4>
+                    <p>Não focamos apenas no sintoma, mas na raiz. Um espaço livre de julgamentos para investigar sua
+                        história e ressignificar traumas.</p>
                 </div>
 
-                <div class="card-quality">
-                    <i class="fa-solid fa-user-secret"></i>
-                    <h4>Sigilo Profissional</h4>
-                    <p>Sua história é tratada com total confidencialidade.</p>
+                <div class="card-quality card-claro">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-file-shield"></i>
+                    </div>
+                    <h4>Espaço Seguro & Ético</h4>
+                    <p>O sigilo é absoluto. Aqui, a sua privacidade é protegida para que sua fala possa ser
+                        verdadeiramente livre e autêntica.</p>
                 </div>
             </div>
         </section>
@@ -176,29 +261,11 @@
             <div class="banner-right">
                 <p>Terapia online com abordagem acolhedora e fundamentada.</p>
                 <p id="responsive-phrase">“O cuidado com a mente é o primeiro gesto de liberdade.”</p>
-                <button class="contact_btn contact-btn-style btn-ripple" id="banner-btn_contact"> <i class="fa-brands fa-whatsapp fa-xl"></i> Agendar
+                <button class="contact_btn contact-btn-style btn-ripple" id="banner-btn_contact"> <i
+                        class="fa-brands fa-whatsapp fa-xl"></i> Agendar
                     atendimento!</button>
             </div>
         </div>
-
-        <!--<section id="minhaAbordagem">
-            <div class="abordagem-container">
-                <figure class="abordagem-media" aria-hidden="true">
-                    <img src="src/assets/gray-background.jpg"
-                        alt="Fundo cinza - Dra. Andrea Fonseca Psicanalista Online" id="gray-background_abordagem">
-                    <img src="src/assets/brain-ilustration.jpg"
-                        alt="Ilustração de cerébro - Dra. Andrea Fonseca Terapeuta Online" id="psi-photo_abordagem">
-                </figure>
-                <h2>Minha abordagem integra a compreensão profunda do inconsciente com a análise dos padrões emocionais
-                    que
-                    moldam o modo como cada pessoa sente, age e se relaciona. <br> A partir de uma escuta atenta e
-                    sensível,
-                    trabalho para trazer à consciência experiências, conflitos internos e repetições que influenciam a
-                    vida
-                    atual, promovendo clareza emocional, autoconhecimento e transformação pessoal. <br> principalmente
-                    trabalho com a <strong>psicanalise</strong>!</h2>
-            </div>
-        </section> -->
     </main>
 
     <footer>
@@ -210,7 +277,8 @@
         </div>
 
         <div id="contact_footer">
-            <button class="contact_btn contact-btn-style btn-ripple" id="footer-btn_contact"> <i class="fa-brands fa-whatsapp fa-xl"></i> Agendar
+            <button class="contact_btn contact-btn-style btn-ripple" id="footer-btn_contact"> <i
+                    class="fa-brands fa-whatsapp fa-xl"></i> Agendar
                 atendimento!</button>
             <p>Numero de Whatsapp: XX XXXX XXXX</p>
         </div>

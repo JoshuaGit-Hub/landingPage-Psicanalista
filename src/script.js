@@ -68,3 +68,23 @@ sections.forEach(section => {
 elementsRight.forEach(element => {
     observer.observe(element);
 })
+
+
+// Fim da animação das sections //
+
+// Mandar mensagem pelo WhatsApp //
+
+function sendWhatsMessage() {
+    const phoneNumber = '000000';
+    const message = 'Olá, gostaria de agendar uma consulta.';
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
+const btnsContact = document.querySelectorAll('.contact_btn');
+
+btnsContact.forEach(btn => {
+    btn.addEventListener('click', e => {
+        sendWhatsMessage();
+    })
+});
