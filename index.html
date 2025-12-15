@@ -30,7 +30,7 @@
             <li><a href="#hero">Início</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#minhaAbordagem">Minha abordagem</a></li>
-            <li><a href="#contato" id="btn-contact_nav">Contato</a></li>
+            <li><a href="#" id="btn-contact_nav" class="contact_btn">Contato</a></li>
         </ul>
 
         <button class="menu-hamburguer" id="menu-hamburguer">
@@ -44,7 +44,7 @@
                 <li><a href="#hero">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#minhaAbordagem">Minha abordagem</a></li>
-                <li><a href="#" id="btn-contact_nav_responsive">Contato</a></li>
+                <li><a href="#" id="btn-contact_nav_responsive" class="contact_btn">Contato</a></li>
             </ul>
         </div>
     </nav>
@@ -139,7 +139,7 @@
 
             <div id="contact-container_about">
                 <h4 class="lema">Atendimentos para o mundo inteiro, em língua portuguesa!</h4>
-                <button class="contact_btn">Agende um <br>atendimento!</button>
+                <button class="contact_btn btn-ripple">Agende um <br>atendimento!</button>
             </div>
         </section>
 
@@ -176,12 +176,12 @@
             <div class="banner-right">
                 <p>Terapia online com abordagem acolhedora e fundamentada.</p>
                 <p id="responsive-phrase">“O cuidado com a mente é o primeiro gesto de liberdade.”</p>
-                <button class="contact_btn" id="banner-btn_contact"> <i class="fa-brands fa-whatsapp fa-xl"></i> Agendar
+                <button class="contact_btn contact-btn-style btn-ripple" id="banner-btn_contact"> <i class="fa-brands fa-whatsapp fa-xl"></i> Agendar
                     atendimento!</button>
             </div>
         </div>
 
-        <section id="minhaAbordagem">
+        <!--<section id="minhaAbordagem">
             <div class="abordagem-container">
                 <figure class="abordagem-media" aria-hidden="true">
                     <img src="src/assets/gray-background.jpg"
@@ -191,38 +191,36 @@
                 </figure>
                 <h2>Minha abordagem integra a compreensão profunda do inconsciente com a análise dos padrões emocionais
                     que
-                    moldam o modo como cada pessoa sente, age e se relaciona. <br> A partir de uma escuta atenta e sensível,
+                    moldam o modo como cada pessoa sente, age e se relaciona. <br> A partir de uma escuta atenta e
+                    sensível,
                     trabalho para trazer à consciência experiências, conflitos internos e repetições que influenciam a
                     vida
                     atual, promovendo clareza emocional, autoconhecimento e transformação pessoal. <br> principalmente
                     trabalho com a <strong>psicanalise</strong>!</h2>
-                </div>
-        </section>
-
-        <section id="contato-section">
-            <div class="left-image">
-                <img src="src/assets/gray-background.jpg" alt="">
             </div>
-
-            <div class="right-content">
-                <h2>Contate-nos</h2>
-
-                <div class="whatsapp-contact">
-                    <button class="contact_btn">Agendar atendimento!</button>
-                </div>
-
-                <div class="social-media">
-                    <a href=""></a>
-                    <a href=""></a>
-                    <a href=""></a>
-                </div>
-            </div>
-        </section>
+        </section> -->
     </main>
 
     <footer>
-        <p>© 2025 Dra. Andrea Fonseca — Psicanalista Online</p>
-        <p>Atendimentos em língua portuguesa para o mundo inteiro.</p>
+        <div class="footer-links">
+            <a href="#hero">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#minhaAbordagem">Minha abordagem</a>
+            <a href="#contato" id="btn-contact_footer">Contato</a>
+        </div>
+
+        <div id="contact_footer">
+            <button class="contact_btn contact-btn-style btn-ripple" id="footer-btn_contact"> <i class="fa-brands fa-whatsapp fa-xl"></i> Agendar
+                atendimento!</button>
+            <p>Numero de Whatsapp: XX XXXX XXXX</p>
+        </div>
+
+
+        <div class="direitos-container">
+            <p>© 2025 Dra. Andrea Fonseca — Psicanalista Online</p>
+            <p>Atendimentos em língua portuguesa para o mundo inteiro.</p>
+            <p id="madefor">Feito por Joshua Calebe</p>
+        </div>
     </footer>
 
     <script src="https://kit.fontawesome.com/7d9a47bb9b.js" crossorigin="anonymous"></script>
