@@ -73,6 +73,10 @@ const navContainer = document.querySelector('.nav-container');
 const heroSection = document.getElementById('hero');
 let heightHero = heroSection.clientHeight;
 
+window.addEventListener('resize', () => {
+    heightHero = heroSection.clientHeight;
+});
+
 window.addEventListener('scroll', () => {
     if (window.scrollY > heightHero) {
         navContainer.classList.add('hero-passed');
