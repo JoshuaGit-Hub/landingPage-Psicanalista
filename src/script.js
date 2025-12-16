@@ -1,5 +1,45 @@
-// Responsividade do NAV //
+// Rolagem Suave para links de navegação //
+function smoothScrollTo(targetPosition, duration = 1000) {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
 
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+
+        if (targetId === '#') return;
+
+        e.preventDefault();
+
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            const targetPosition = targetElement.offsetTop - 80;
+            smoothScrollTo(targetPosition);
+        }
+    });
+});
+
+// Responsividade do NAV //
 const btnHamburguer = document.getElementById('menu-hamburguer');
 const navResponsiveContainer = document.getElementById('nav-responsive_container');
 const navLinksResponsive = document.querySelector('#nav-links_responsive');
@@ -28,10 +68,7 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('active');
 });
 
-// Fim da responsividade do NAV //
-
 // Adicionar sombra ao NAV ao rolar a página //
-
 const navContainer = document.querySelector('.nav-container');
 const heroSection = document.getElementById('hero');
 let heightHero = heroSection.clientHeight;
@@ -39,41 +76,12 @@ let heightHero = heroSection.clientHeight;
 window.addEventListener('scroll', () => {
     if (window.scrollY > heightHero) {
         navContainer.classList.add('hero-passed');
-    }
-    else {
+    } else {
         navContainer.classList.remove('hero-passed');
     }
 });
 
-
-// Animation Sections
-
-const sections = document.querySelectorAll('.fade-in-section'); 
-const elementsRight = document.querySelectorAll('.fade-in-right');
-
-const observer = new IntersectionObserver ((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-        }
-    });
-}, {
-    threshold: 0.1
-});
-
-sections.forEach(section => {
-    observer.observe(section);
-});
-
-elementsRight.forEach(element => {
-    observer.observe(element);
-})
-
-
-// Fim da animação das sections //
-
 // Mandar mensagem pelo WhatsApp //
-
 function sendWhatsMessage() {
     const phoneNumber = '000000';
     const message = 'Olá, gostaria de agendar uma consulta.';
@@ -81,10 +89,20 @@ function sendWhatsMessage() {
     window.open(url, '_blank');
 }
 
-const btnsContact = document.querySelectorAll('.contact_btn');
+const allBtnsContact = document.querySelectorAll('.contact_btn');
 
-btnsContact.forEach(btn => {
+allBtnsContact.forEach(btn => {
     btn.addEventListener('click', e => {
         sendWhatsMessage();
     })
+});
+
+// Animações com ScrollReveal //
+ScrollReveal().reveal('.hero-content, .hero-image', {
+    duration: 1000,
+    origin: 'bottom',
+    distance: '50px',
+    easing: 'ease-in-out',
+    reset: false,
+    interval: 200
 });
