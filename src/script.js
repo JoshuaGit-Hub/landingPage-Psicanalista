@@ -83,7 +83,7 @@ window.addEventListener('scroll', () => {
 
 // Mandar mensagem pelo WhatsApp //
 function sendWhatsMessage() {
-    const phoneNumber = '000000';
+    const phoneNumber = '556295009722';
     const message = 'Olá, gostaria de agendar uma consulta.';
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -95,14 +95,4 @@ allBtnsContact.forEach(btn => {
     btn.addEventListener('click', e => {
         sendWhatsMessage();
     })
-});
-
-// Animações com ScrollReveal //
-ScrollReveal().reveal('.hero-content, .hero-image', {
-    duration: 1000,
-    origin: 'bottom',
-    distance: '50px',
-    easing: 'ease-in-out',
-    reset: false,
-    interval: 200
 });
